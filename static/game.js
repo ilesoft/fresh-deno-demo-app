@@ -98,7 +98,7 @@ document.addEventListener("keydown", (e) => {
         ctx.lineTo(480, myGamePiece.y + 15);
         ctx.stroke();
         clearInterval(myGameArea.interval);
-        document.getElementById("amount").value = (-1 * myGamePiece.y + 240) / 24;
+        document.getElementById("amount").value = Math.round((-1 * myGamePiece.y + 240) / 24);
     }
 });
 
