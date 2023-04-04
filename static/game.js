@@ -1,3 +1,6 @@
+// Almost all of this code is stolen from W3Schools
+// https://www.w3schools.com/graphics/tryit.asp?filename=trygame_default_gravity
+
 var myGamePiece;
 var myObstacles = [];
 var myScore;
