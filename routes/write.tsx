@@ -7,9 +7,11 @@ export const handler: Handlers<void> = {
   },
 };
 
+
+
 export default function Write() {
   return (
-      <div>
+      <div id="area">
         <p><a href={"/"}>takaasin kotiin</a></p>
         <form method="GET">
           <label for="desc">Kuvaus tehdystä työstä</label>
@@ -18,10 +20,17 @@ export default function Write() {
           <br/>
           <label for="amount">Paljos teit töitä</label>
           <br/>
-          <input type="number" name="amount" min={0} step={0.1}/>
+          <input id="amount" type="number" name="amount" min={0}/>
           <br/>
           <button type="submit">Tallenna</button>
         </form>
+        <div>
+            <canvas id="canvas" width="288" height="512"></canvas>
+        </div>
+        <script src="game.js"></script>
+        <script>
+            startGame();
+        </script>
       </div>
   );
 }
