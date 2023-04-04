@@ -24,6 +24,7 @@ export default function Write() {
           <br/>
           <button type="submit">Tallenna</button>
         </form>
+        <p>Paina k-näppäintä nostaaksesi tykkiä ja välilyöntiä ampuaksesi</p>
         <div>
             <canvas id="canvas" width="288" height="512"></canvas>
         </div>
