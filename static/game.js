@@ -6,7 +6,7 @@ var myObstacles = [];
 var myScore;
 
 function startGame() {
-    myGamePiece = new component(30, 30, "red", 10, 120);
+    myGamePiece = new component(30, 30, "./kanuuna.png", 10, 120, "image");
     myGamePiece.gravity = 0.05;
     myGameArea.start();
 }
@@ -26,6 +26,10 @@ var myGameArea = {
 }
 
 function component(width, height, color, x, y, type) {
+    this.image = new Image();
+    this.image.src = color;
+    this.otherImage = new Image();
+    this.otherImage.src = "./maalit.png";
     this.type = type;
     this.score = 0;
     this.width = width;
@@ -37,18 +41,8 @@ function component(width, height, color, x, y, type) {
     this.gravitySpeed = 0;
     this.update = function() {
         ctx = myGameArea.context;
-        ctx.fillStyle = color;
-        ctx.fillRect(this.x, this.y, this.width, this.height);
-
-        var grd = ctx.createLinearGradient(0, 0, 0, 260);
-        grd.addColorStop(0, "red");
-        grd.addColorStop(1, "white");
-        ctx.fillStyle = grd;
-        ctx.fillRect(450, 10, 460, 260);
-        ctx.fillStyle = "#000000";
-        ctx.font = "15px Arial";
-        ctx.fillText("10",460 , 15); 
-        ctx.fillText(" 0",460 , 255); 
+        ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
+        ctx.drawImage(this.otherImage, 60, 10, 500, 260);
     }
     this.newPos = function() {
         this.gravitySpeed += this.gravity;
